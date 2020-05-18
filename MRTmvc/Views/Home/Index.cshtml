@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="hero-area bg-1 text-center overly">
+    <div class="container">
+        <div class="row">
+            <a href="~/Views/Home/Index.cshtml"></a>
+            <div class="col-md-12">
+                <div class="content-block">
+                    <h1>Travel with MRT </h1>
+                    <p>MRT SBK Line has fully commenced on 17 July 2017, with 31 stations opened along the 51km-long alignment. The end-to-end journey from Sungai Buloh to Kajang takes about 84 minutes.</p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        View Table
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body d-flex justify-content-center">
+                <div class="container-fluid" style="display:inline-block;overflow-x:scroll;">
+                    <img src="~/Images/mrtTable.png" />
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>

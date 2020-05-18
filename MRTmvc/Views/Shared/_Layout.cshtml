@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-slider.css" rel="stylesheet" />
+    <link href="~/Content/css/PageStyle.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg navbar-light navigation">
+                            <a class="navbar-brand" href='@Url.Action("Index", "Home")'>
+                                <img class="logo" src="~/Images/logo.png" alt="">
+                            </a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto main-nav ">
+                                    @if (!string.IsNullOrEmpty(Session["RegId"] as string))
+                                    {
+                                        <div class="helloUser">Hello @Session["Username"]</div>
+                                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                                            <a class="nav-link" href='@Url.Action("Index", "Home")'>Home</a>
+                                        </li>
+                                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "BuyTicket" ? "active" : "")">
+                                            <a class="nav-link" href='@Url.Action("BuyTicket", "Home", new { RegId = Session["RegId"] })'>Buy Ticket</a>
+                                        </li>
+
+                                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Data" ? "active" : "")">
+                                            <a class="nav-link" href='@Url.Action("Data", "Home", new { RegId = Session["RegId"] })'>User Profile</a>
+                                        </li>
+
+                                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "ViewHistory" ? "active" : "")">
+                                            <a class="nav-link" href='@Url.Action("ViewHistory", "Home", new { RegId = Session["RegId"] })'>View history</a>
+                                        </li>
+
+                                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Logout" ? "active" : "")">
+                                            <a class="nav-link" href='@Url.Action("Logout", "Home")'>Logout</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+
+                                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")">
+                                            <a class="nav-link" href='@Url.Action("Login", "Home")'>Login/Register</a>
+                                        </li>
+
+                                    }
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+    <!--============================
+    =            Footer            =
+    =============================-->
+    <footer class="footer section section-sm">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
+                    <!-- About -->
+                    <div class="block about">
+                        <!-- footer logo -->
+                        <img src="images/logo-footer.png" alt="">
+                        <!-- description -->
+                        <p class="alt-color">
+                            Mrt ticketing website
+                        </p>
+                    </div>
+                </div>
+                <!-- Link list -->
+                <!-- Promotion -->
+                <div class="col-lg-4 col-md-7">
+                    <!-- App promotion -->
+                </div>
+            </div>
+        </div>
+        <!-- Container End -->
+    </footer>
+    <!-- Footer Bottom -->
+    <footer class="footer-bottom">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        <p>
+                            By Abdul aziz, Hafizulhilmi and Amirul Farhan
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-12">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Content/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/Extra.js"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

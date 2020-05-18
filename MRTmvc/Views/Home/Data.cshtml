@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MRTmvc.Models.Register>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="container">
+    <h2>User profile</h2>
+    <div class="row justify-content-md-center">
+        @foreach (var item in Model)
+        {
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <th scope="row">@Html.DisplayNameFor(model => model.Username)</th>
+                        <td>@Html.DisplayFor(modelItem => item.Username)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@Html.DisplayNameFor(model => model.Email)</th>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@Html.DisplayNameFor(model => model.Nric)</th>
+                        <td>@Html.DisplayFor(modelItem => item.Nric)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@Html.DisplayNameFor(model => model.Password1)</th>
+                        <td>@Html.Raw("\u2022\u2022\u2022\u2022\u2022")</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@Html.DisplayNameFor(model => model.Password2)</th>
+                        <td>@Html.Raw("\u2022\u2022\u2022\u2022\u2022")</td>
+                    </tr>
+                </tbody>
+            </table>
+            @Html.ActionLink("Edit", "Edit", new { id = item.RegId }, new { @class = "btn btn-primary", style = "margin:10px;" })
+        }
+    </div>
+</div>
+
+

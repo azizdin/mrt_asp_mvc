@@ -1,0 +1,143 @@
+﻿@model MRTmvc.Models.Route
+@{
+    ViewBag.Title = "BuyTicket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="hero-area bg-1 text-center overly">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Header Contetnt -->
+                <div class="cool-container">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-12 align-content-center">
+                                @using (Html.BeginForm())
+                                {
+
+                                    @Html.AntiForgeryToken()
+                                    <h3> Select Your Trains Information </h3>
+                                    <div class="validationSum"> @Html.ValidationSummary()</div>
+
+                                    <div class="container" style="max-width:500px;text-align:left;">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label class="CustomRadio">One way @Html.RadioButtonFor(model => model.tripType, "One-way", new { id = "OneWay", @checked = "checked" }) <span class="checkmark"></span></label>
+                                            </div>
+                                            <div class="col">
+                                                <label class="CustomRadio">Round Trip @Html.RadioButtonFor(model => model.tripType, "Round-trip", new { id = "RoundTrip" }) <span class="checkmark"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    @Html.DropDownListFor(x => x.LevelCategory, new[] {
+                                    new SelectListItem() { Text = "Senior cetizen", Value = "0.50"},
+                                    new SelectListItem() { Text = "OKU",            Value = "0.40"},
+                                    new SelectListItem() { Text = "Student",        Value = "0.60"},
+                                    new SelectListItem() { Text = "Normal",         Value = "1.00"},
+                                    }, "Category", new { @class = "w-100 form-control mt-lg-1 mt-md-2" })
+
+                                    @Html.DropDownListFor(x => x.StationFrom, new[] {
+                                    new SelectListItem() { Text = "Sungai Buloh",           Value = "0"},
+                                    new SelectListItem() { Text = "Kampung Selamat",        Value = "1"},
+                                    new SelectListItem() { Text = "Kwasa Damansara",        Value = "2"},
+                                    new SelectListItem() { Text = "Kwasan Sentral",         Value = "3"},
+                                    new SelectListItem() { Text = "Kota Damansara",         Value = "4"},
+                                    new SelectListItem() { Text = "Surian",                 Value = "5"},
+                                    new SelectListItem() { Text = "Mutiara Damansara",      Value = "6"},
+                                    new SelectListItem() { Text = "Bandar Utama",           Value = "7"},
+                                    new SelectListItem() { Text = "Taman Tun Dr Ismail",    Value = "8"},
+                                    new SelectListItem() { Text = "Phileo Damansara",       Value = "9"},
+                                    new SelectListItem() { Text = "Pusat Bandar Damansara", Value = "10"},
+                                    new SelectListItem() { Text = "Semantan",               Value = "11"},
+                                    new SelectListItem() { Text = "Muzium Negara",          Value = "12"},
+                                    new SelectListItem() { Text = "Pasar Seni",             Value = "13"},
+                                    new SelectListItem() { Text = "Merdeka",                Value = "14"},
+                                    new SelectListItem() { Text = "Bukit Bintang",         Value = "15"},
+                                    new SelectListItem() { Text = "Tun Razak Exchange",     Value = "16"},
+                                    new SelectListItem() { Text = "Cochrane",               Value = "17"},
+                                    new SelectListItem() { Text = "Maluri",                 Value = "18"},
+                                    new SelectListItem() { Text = "Taman Pertama",          Value = "19"},
+                                    new SelectListItem() { Text = "Taman Midah",            Value = "20"},
+                                    new SelectListItem() { Text = "Taman Mutiara",          Value = "21"},
+                                    new SelectListItem() { Text = "Taman Connaught",        Value = "22"},
+                                    new SelectListItem() { Text = "Taman Suntex",           Value = "23"},
+                                    new SelectListItem() { Text = "Sri Raya",               Value = "24"},
+                                    new SelectListItem() { Text = "Bandar Tun Hussein Onn", Value = "25"},
+                                    new SelectListItem() { Text = "Batu Sebelas Cheras",    Value = "26"},
+                                    new SelectListItem() { Text = "Bukit Dukung",           Value = "27"},
+                                    new SelectListItem() { Text = "Sungai Jernih",          Value = "28"},
+                                    new SelectListItem() { Text = "Stadium Kajang",         Value = "29"},
+                                    new SelectListItem() { Text = "Kajang",                 Value = "30"}
+                                    }, "From", new { @class = "w-100 form-control mt-lg-1 mt-md-2" })
+
+                                    @Html.DropDownListFor(x => x.StationTo, new[] {
+                                    new SelectListItem() { Text = "Sungai Buloh",           Value = "0"},
+                                    new SelectListItem() { Text = "Kampung Selamat",        Value = "1"},
+                                    new SelectListItem() { Text = "Kwasa Damansara",        Value = "2"},
+                                    new SelectListItem() { Text = "Kwasan Sentral",         Value = "3"},
+                                    new SelectListItem() { Text = "Kota Damansara",         Value = "4"},
+                                    new SelectListItem() { Text = "Surian",                 Value = "5"},
+                                    new SelectListItem() { Text = "Mutiara Damansara",      Value = "6"},
+                                    new SelectListItem() { Text = "Bandar Utama",           Value = "7"},
+                                    new SelectListItem() { Text = "Taman Tun Dr Ismail",    Value = "8"},
+                                    new SelectListItem() { Text = "Phileo Damansara",       Value = "9"},
+                                    new SelectListItem() { Text = "Pusat Bandar Damansara", Value = "10"},
+                                    new SelectListItem() { Text = "Semantan",               Value = "11"},
+                                    new SelectListItem() { Text = "Muzium Negara",          Value = "12"},
+                                    new SelectListItem() { Text = "Pasar Seni",             Value = "13"},
+                                    new SelectListItem() { Text = "Merdeka",                Value = "14"},
+                                    new SelectListItem() { Text = "Bukit Bintang",         Value = "15"},
+                                    new SelectListItem() { Text = "Tun Razak Exchange",     Value = "16"},
+                                    new SelectListItem() { Text = "Cochrane",               Value = "17"},
+                                    new SelectListItem() { Text = "Maluri",                 Value = "18"},
+                                    new SelectListItem() { Text = "Taman Pertama",          Value = "19"},
+                                    new SelectListItem() { Text = "Taman Midah",            Value = "20"},
+                                    new SelectListItem() { Text = "Taman Mutiara",          Value = "21"},
+                                    new SelectListItem() { Text = "Taman Connaught",        Value = "22"},
+                                    new SelectListItem() { Text = "Taman Suntex",           Value = "23"},
+                                    new SelectListItem() { Text = "Sri Raya",               Value = "24"},
+                                    new SelectListItem() { Text = "Bandar Tun Hussein Onn", Value = "25"},
+                                    new SelectListItem() { Text = "Batu Sebelas Cheras",    Value = "26"},
+                                    new SelectListItem() { Text = "Bukit Dukung",           Value = "27"},
+                                    new SelectListItem() { Text = "Sungai Jernih",          Value = "28"},
+                                    new SelectListItem() { Text = "Stadium Kajang",         Value = "29"},
+                                    new SelectListItem() { Text = "Kajang",                 Value = "30"}
+                                    }, "Destination", new { @class = "w-100 form-control mt-lg-1 mt-md-2" })
+
+                                    @Html.TextBoxFor(x => x.NumTicket, "No. of pack", new { @Class = "w-100 form-control my-2 my-lg-1", style = "height:40px;", placeholder = "Ticket Quantity", type = "number", min = "1" })
+                                 
+                                    /*
+                                    @Html.DropDownListFor(x => x.NumTicket, new[] {
+                                    new SelectListItem() { Text = "1",  Value = "1"},
+                                    new SelectListItem() { Text = "2",  Value = "2"},
+                                    new SelectListItem() { Text = "3",  Value = "3"},
+                                    new SelectListItem() { Text = "4",  Value = "4"},
+                                    new SelectListItem() { Text = "5",  Value = "5"},
+                                    new SelectListItem() { Text = "6",  Value = "6"},
+                                    new SelectListItem() { Text = "7",  Value = "7"},
+                                    new SelectListItem() { Text = "8",  Value = "8"},
+                                    new SelectListItem() { Text = "9",  Value = "9"},
+                                    new SelectListItem() { Text = "10", Value = "10"}
+                                    }, "No. of pack", new { @class = "w-100 form-control mt-lg-1 mt-md-2" })
+                                    */
+
+
+                                    <br /><br />
+
+
+                                    <input type="submit" value="Buy Ticket" class="btn btn-primary" />
+
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

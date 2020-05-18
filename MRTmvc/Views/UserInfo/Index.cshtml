@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MRTmvc.Models.Register>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+
+    <div class="container-fluid">
+        <div style="overflow:auto; height:700px;">
+            <h2>User Info</h2>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Username)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nric)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Password1)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nric)
+                        </td>
+                        <td>
+                            @Html.Raw("\u2022\u2022\u2022\u2022\u2022")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { id = item.RegId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.RegId })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+

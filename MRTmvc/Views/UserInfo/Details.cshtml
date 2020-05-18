@@ -1,0 +1,39 @@
+﻿@model MRTmvc.Models.Register
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container">
+    <h2>Details</h2>
+    <table class="table table-borderless">
+        <tbody>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Username)</th>
+                <td>@Html.DisplayFor(model => model.Username)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Email)</th>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Nric)</th>
+                <td>@Html.DisplayFor(model => model.Nric)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Password1)</th>
+                <td>@Html.Raw("\u2022\u2022\u2022\u2022\u2022")</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Password2)</th>
+                <td>@Html.Raw("\u2022\u2022\u2022\u2022\u2022")</td>
+            </tr>
+        </tbody>
+    </table>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RegId }, new { @class = "btn btn-primary", style = "margin:10px;" })
+    @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-primary", style = "margin:10px;" })
+</div>
+
+

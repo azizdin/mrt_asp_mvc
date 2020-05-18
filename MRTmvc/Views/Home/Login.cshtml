@@ -1,0 +1,53 @@
+﻿@model MRTmvc.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<section class="hero-area bg-1 text-center overly">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Header Contetnt -->
+                <div class="cool-container">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-12 align-content-center">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <h3> Please enter your email and password </h3>
+                                    <div class="validationSum"> @Html.ValidationSummary()</div>
+
+
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                    @Html.TextBoxFor(i => i.Email, new { Class = "form-control my-2 my-lg-1", placeholder = "Email" })
+                                   
+
+                                    @Html.PasswordFor(i => i.Password1, new { Class = "form-control my-2 my-lg-1", placeholder = "Password" })
+                                  
+
+                                    @ViewBag.m
+                                    <br /> 
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-4 col-sm-1">
+                                                <input type="submit" value="Login" class="btn btn-primary" style="margin:5px;" />
+                                            </div>
+                                            <div class="col-4 col-sm-1">
+                                                <div class="d-flex justify-content-center"> <a style="margin:5px;" class="btn btn-primary" href="@Url.Action("Register", "Home")">Sign Up</a> </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                }       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

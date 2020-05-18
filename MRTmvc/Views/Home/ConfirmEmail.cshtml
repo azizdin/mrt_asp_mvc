@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmEmail";
+}
+
+<div class="container thanks">
+
+    <h4>@ViewBag.Message</h4>
+    <br>
+
+    <h4>@ViewBag.Message1</h4>
+    <br>
+    <h4>in 6 second, You will be redirected to main page.</h4>
+    
+    <script>
+        window.setTimeout(function(){window.location.href='@Url.Action("Index", "Home")';}, 6000);
+    </script>
+
+
+</div>

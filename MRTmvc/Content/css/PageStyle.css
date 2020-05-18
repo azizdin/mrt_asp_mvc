@@ -1,0 +1,168 @@
+﻿
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../Font/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../Font/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('../Font/Lato-Black.ttf') format('truetype');
+}
+
+.Lato-Bold {
+    font-family: 'Lato-Bold',Arial;
+}
+
+.Lato-Black {
+    font-family: 'Lato-Black',Arial;
+}
+
+.Lato {
+    font-family: 'Lato-Regular',Arial;
+}
+
+.helloUser {
+    font-family: 'Lato-Bold',Arial;
+    padding: 10px 40px 10px 10px;
+}
+
+.UserInfo {
+    font-family: 'Lato-Bold',Arial;
+    color: #404040;
+}
+
+@media(min-width:700px) {
+    .thanks {
+        padding: 200px;
+        height: 550px;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-xl {
+        width: 90%;
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-xl {
+        width: 97%;
+        max-width: 1920px;
+    }
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.logo-print {
+    display: none;
+    max-width: 150px;
+    margin: auto;
+}
+
+.validationSum {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: red;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+
+select.input-validation-error {
+    border: 1px solid red;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: red;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+/* The container */
+.CustomRadio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default radio button */
+    .CustomRadio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.CustomRadio:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.CustomRadio input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.CustomRadio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.CustomRadio .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}

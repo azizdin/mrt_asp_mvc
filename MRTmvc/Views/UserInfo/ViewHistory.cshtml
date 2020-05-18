@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MRTmvc.Models.Route>
+
+@{
+    ViewBag.Title = "ViewHistory";
+}
+
+<h2>ViewHistory</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tripType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LevelCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StationFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StationTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumTicket)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Charge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPercent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tripType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LevelCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StationFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StationTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumTicket)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Charge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountPercent)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StoreId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StoreId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StoreId })
+        </td>
+    </tr>
+}
+
+</table>

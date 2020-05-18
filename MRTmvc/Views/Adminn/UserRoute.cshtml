@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MRTmvc.Models.Route>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid">
+    <div style="overflow:auto; height:700px;">
+        <h2>Customer Purchase History</h2>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StationFrom)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StationTo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Charge)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StationFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StationTo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Charge)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.StoreId })
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+</div>
+
+

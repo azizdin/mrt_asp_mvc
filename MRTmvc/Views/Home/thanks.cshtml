@@ -1,0 +1,22 @@
+﻿@model MRTmvc.Models.Route
+@{
+    ViewBag.Email = Session["Email"];
+    ViewBag.Title = "thanks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+            @:<b>Sorry  @Session["Username"], email unable to be send.</b>
+        }
+    }
+
+    <script>
+        window.setTimeout(function(){window.location.href='@Url.Action("Index", "Home")';}, 12000);
+    </script>
+
+
+</div>
+
+   

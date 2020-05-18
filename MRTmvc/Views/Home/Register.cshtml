@@ -1,0 +1,53 @@
+﻿@model MRTmvc.Models.Register
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+<section class="hero-area bg-1 text-center overly">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Header Contetnt -->
+                <div class="cool-container">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-12 align-content-center">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <h3> Enter Your Detail Information </h3>
+                                    <div class="validationSum"> @Html.ValidationSummary()</div>
+
+
+
+                                   
+
+                                    @Html.TextBoxFor(i => i.Username, new { Class = "form-control my-2 my-lg-1", placeholder = "Name" })
+                                   
+
+                                    @Html.TextBoxFor(i => i.Email, new { Class = "form-control my-2 my-lg-1", placeholder = "Email Address" })
+                                   
+
+
+                                    @Html.TextBoxFor(i => i.Nric, new { Class = "form-control my-2 my-lg-1", placeholder = "NRIC No / Passport No" })
+                                 
+
+                                    @Html.PasswordFor(i => i.Password1, new { Class = "form-control my-2 my-lg-1", placeholder = "Passsword" })
+                                   
+
+                                    @Html.PasswordFor(i => i.Password2, new { Class = "form-control my-2 my-lg-1", placeholder = "Confirm password" })
+                                 
+                                    <input type="submit" value="Register" class="btn btn-primary" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
